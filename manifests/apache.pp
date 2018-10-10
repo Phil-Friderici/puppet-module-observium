@@ -2,8 +2,8 @@
 #
 class observium::apache {
 
-  include apache
-  include apache::params
+  include ::apache
+  include ::apache::params
 
   apache::mod { 'rewrite': }
 

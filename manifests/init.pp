@@ -33,7 +33,7 @@ class observium (
   $cron_poller_user          = 'root',
 ) {
 
-  include observium::apache
+  include ::observium::apache
 
   case $::osfamily {
     'Debian': {
@@ -61,8 +61,8 @@ class observium (
   }
 
   package { 'observium_packages':
-    ensure  => installed,
-    name    => $my_packages,
+    ensure => installed,
+    name   => $my_packages,
   }
 
   file { 'observium_path':
@@ -74,7 +74,7 @@ class observium (
   }
 
   file { 'observium_config':
-    ensure  => present,
+    ensure  => file,
     path    => $config_path,
     mode    => $config_mode,
     owner   => $config_owner,
