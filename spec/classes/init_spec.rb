@@ -17,7 +17,7 @@ describe 'observium' do
     end
     it do
       should contain_file('observium_config').with({
-        'ensure'  => 'present',
+        'ensure'  => 'file',
         'path'    => '/opt/observium/config.php',
         'owner'   => 'root',
         'group'   => 'root',
